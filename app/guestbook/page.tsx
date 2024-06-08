@@ -93,7 +93,7 @@ async function GuestbookForm() {
     <div className="flex justify-between gap-4 flex-col md:flex-row">
       <Input type="text" placeholder="Your Message..." />
       <RegisterLink>
-        <Button>Sign for free </Button>
+        <Button className="w-full">Sign for free </Button>
       </RegisterLink>
     </div>
   );
