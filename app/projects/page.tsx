@@ -3,7 +3,7 @@ import { ProjectCard } from "../lib/interface";
 import { client } from "../lib/sanity";
 
 async function getData() {
-  const query = `*[_type == 'project'] {
+  const query = `*[_type == 'project'] | order(_createdAt desc) {
         title,
           _id,
           link,
@@ -12,7 +12,7 @@ async function getData() {
           "imageUrl": image.asset->url
     }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { next: { revalidate: 30 } });
 
   return data;
 }
@@ -52,7 +52,7 @@ export default async function ProjectPage() {
               <div className="mt-3 flex flex-wrap gap-2">
                 {item.tags.map((tagItem, index) => (
                   <span
-                  className="inline-flex items-center rounded-md bg-primary/10 px-3 py-1.5 text-xs sm:text-sm font-medium text-primary ring-2 ring-inset ring-primary/10"
+                    className="inline-flex items-center rounded-md bg-primary/10 px-3 py-1.5 text-xs sm:text-sm font-medium text-primary ring-2 ring-inset ring-primary/10"
                     key={index}
                   >
                     {tagItem}

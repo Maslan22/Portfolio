@@ -8,7 +8,11 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Form } from "../components/Form";
 import prisma from "../lib/db";
 import { Suspense } from "react";
-import { GuestBookFormLoading, LoadingMessages } from "../components/LoadingState";
+import {
+  GuestBookFormLoading,
+  LoadingMessages,
+} from "../components/LoadingState";
+import {unstable_noStore as noStore} from "next/cache";
 
 async function getGuestBookEntry() {
   const data = prisma.guestBookEntry.findMany({
@@ -31,8 +35,8 @@ async function getGuestBookEntry() {
   return data;
 }
 
-
 export default function GuestbookPage() {
+  noStore();
   return (
     <section className="max-w-7xl w-full px-4 md:px-8 mx-auto">
       <h1 className="text-4xl font-semibold lg:text-5xl pt-5">Guestbook</h1>
@@ -60,26 +64,28 @@ export default function GuestbookPage() {
 
 async function GuestBookEntries() {
   const data = await getGuestBookEntry();
-  
+
   if (data.length === 0) {
     return null;
   }
 
-    return data.map((item) => (
-      <li key={item.id}>
-        <div className="flex items-center">
-          <img
-            src={item.User?.profileImage as string}
-            alt="User Profile Image"
-            className="w-10 h-10 rounded-lg"
-          />
+  return data.map((item) => (
+    <li key={item.id}>
+      <div className="flex items-center">
+        <img
+          src={item.User?.profileImage as string}
+          alt="User Profile Image"
+          className="w-10 h-10 rounded-lg"
+        />
 
-          <p className="text-muted-foreground pl-3 break-words">{item.User?.firstName}: <span className="text-foreground">{item.message}</span></p>
-        </div>
-      </li>
-    ));
+        <p className="text-muted-foreground pl-3 break-words">
+          {item.User?.firstName}:{" "}
+          <span className="text-foreground">{item.message}</span>
+        </p>
+      </div>
+    </li>
+  ));
 }
-
 
 async function GuestbookForm() {
   const { getUser } = getKindeServerSession();
