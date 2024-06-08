@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import luffyGear5 from "../../public/luffygear5.jpeg";
+import luffyGear5 from "../../public/LuffyGear5.jpeg";
 import Image from "next/image";
 
 export function AboutSection() {
