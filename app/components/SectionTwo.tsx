@@ -56,7 +56,7 @@ const socialMedia = [
     icon: twitter,
     name: "X / Twitter",
     username: "@henrymaslan",
-    link: "https://localhost:3000/",
+    link: "/",
   },
   {
     id: 2,
