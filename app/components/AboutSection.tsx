@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import luffyGear5 from "../../public/LuffyGear5.jpeg";
+import me2 from "../../public/me2.jpg";
 import Image from "next/image";
 
 export function AboutSection() {
@@ -34,7 +35,7 @@ export function AboutSection() {
         </a>
       </Card>
       <div className="col-span-1">
-            <Image src={luffyGear5} alt="Joy Boy" className="h-[500px] object-cover rounded-lg w-full"/>
+            <Image src={me2} alt="Maslan" className="h-[500px] object-cover rounded-lg w-full"/>
       </div>
     </div>
   );

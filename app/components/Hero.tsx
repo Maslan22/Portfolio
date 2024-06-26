@@ -1,5 +1,6 @@
 import Image from "next/image";
 import luffy from "../../public/kidLuffy.jpeg";
+import Me from "../../public/me.jpg";
 
 export function Hero() {
   return (
@@ -29,8 +30,8 @@ export function Hero() {
       </div>
 
       <Image
-        src={luffy}
-        alt="Luffy"
+        src={Me}
+        alt="Maslan Iddirisu Henry"
         className="col-spam-1 h-[500px] object-cover rounded-2xl bg-gray-100"
         priority
       />
