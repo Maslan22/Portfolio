@@ -31,5 +31,5 @@ export async function GET() {
         })
     }
 
-    return NextResponse.redirect("https://portfolio-git-master-maslans-projects.vercel.app/guestbook")
+    return NextResponse.redirect("https://portfolio-two-gray-49.vercel.app/guestbook")
 }
