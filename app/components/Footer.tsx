@@ -16,7 +16,7 @@ export function Footer() {
         ))}
       </ul>
       <p className="mt-2 text-center stext-muted-foreground">
-        &copy: 2024 Henry Maslan Iddirisu. All Rights reserved.
+        &copy; 2024 Henry Maslan Iddirisu. All Rights reserved.
       </p>
     </footer>
   );
