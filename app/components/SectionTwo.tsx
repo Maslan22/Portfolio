@@ -56,21 +56,21 @@ const socialMedia = [
     icon: twitter,
     name: "X / Twitter",
     username: "@henrymaslan",
-    link: "https://localhost:3000/",
+    link: "/",
   },
   {
     id: 2,
     icon: linkedin,
     name: "LinkedIn",
     username: "@henrymaslan",
-    link: "https://localhost:3000/",
+    link: "https://www.linkedin.com/in/henry-iddrisu/",
   },
   {
     id: 3,
-    icon: insta,
-    name: "Instagram",
-    username: "@henrymaslan",
-    link: "https://localhost:3000/",
+    icon: github,
+    name: "Github",
+    username: "@Maslan22",
+    link: "https://github.com/Maslan22/",
   },
 ];
 
