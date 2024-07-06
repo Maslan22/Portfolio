@@ -15,7 +15,7 @@ import {
 import {unstable_noStore as noStore} from "next/cache";
 
 async function getGuestBookEntry() {
-  const data = prisma.guestBookEntry.findMany({
+  const data = await prisma.guestBookEntry.findMany({
     select: {
       User: {
         select: {
